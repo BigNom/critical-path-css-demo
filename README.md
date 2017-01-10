@@ -1,9 +1,10 @@
 critical-path-css-demo
 ======================
 
-Generate and inline critical-path CSS example using [Critical](http://github.com/addyosmani/critical).
+my attempt at running critical
 
-Live demo of [before](http://addyosmani.github.io/critical-path-css-demo/output/normal) and [after](http://addyosmani.github.io/critical-path-css-demo/output/critical) critical-path CSS generation and inlining.
+## Publishing to gh-pages
+![]http://www.hongkiat.com/blog/publishing-github-page/
 
 *PageSpeed Insights results of before and after*
 
@@ -76,9 +77,9 @@ $ yo gulp-webapp
 # Select Bootstrap and say no to Modernizr & Sass
 ```
 
-You should now have a valid set of source files, including a `Gulpfile.js`. 
+You should now have a valid set of source files, including a `Gulpfile.js`.
 
-The first thing we're going to do is install the Critical module which can generate and inline your critical-path CSS for you. 
+The first thing we're going to do is install the Critical module which can generate and inline your critical-path CSS for you.
 
 This can be installed as follows:
 
@@ -120,10 +121,3 @@ gulp.task('critical', ['build'], function (cb) {
 ```
 
 That's it. You can now run `gulp critical` to generate a complete build where `dist/index-critical.html` will contain your final output files. Above I've passed in a `width` and `height` which represent the viewports I'm targeting with my above-the-fold CSS. `minify` ensures that the inlined CSS gets minified.
-
-## Disclaimer
-
-Note that this sample project is just that - a sample. It does not demonstrate how well these tools and
-techniques work on a complex site nor a site making heavy use of dynamic styles. Your mileage may vary
-and I encourage testing the tools available before making a decision about whether Critical makes sense
-for you.

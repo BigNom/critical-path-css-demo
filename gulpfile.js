@@ -2,7 +2,7 @@
 // generated on 2014-07-15 using generator-gulp-webapp 0.1.0
 
 var gulp = require('gulp');
-var critical = require('critical');
+// var critical = require('critical');
 
 // load plugins
 var $ = require('gulp-load-plugins')();
