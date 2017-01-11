@@ -2,7 +2,14 @@
 // generated on 2014-07-15 using generator-gulp-webapp 0.1.0
 
 var gulp = require('gulp');
-// var critical = require('critical');
+var critical = require('critical');
+
+var browserSync = require('browser-sync');
+
+const osTmpdir = require('os-tmpdir');
+
+// osTmpdir() 'C:\\Users\\biddles\\AppData\\Local\\Temp';
+
 
 // load plugins
 var $ = require('gulp-load-plugins')();
@@ -96,6 +103,13 @@ gulp.task('serve', ['connect'], function () {
     require('opn')('http://localhost:9000');
 });
 
+gulp.task('serve:dist', function () {
+  browserSync.init({
+    server: {
+      baseDir: "./dist"
+    }
+  });
+});
 
 // Generate & Inline Critical-path CSS
 gulp.task('critical', ['build'], function (cb) {
@@ -103,7 +117,7 @@ gulp.task('critical', ['build'], function (cb) {
         inline: true,
         base: 'dist/',
         src: 'index.html',
-        dest: 'dist/index-critical.html',
+        dest: 'dist/critical.html',
         width: 320,
         height: 480,
         minify: true

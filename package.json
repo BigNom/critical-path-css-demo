@@ -1,11 +1,16 @@
 {
   "name": "development",
   "version": "0.0.0",
+  "scripts": {
+    "test": "node -e \"console.log(require('os').tmpdir())\""
+  },
   "dependencies": {
     "global": "^4.3.1",
-    "jshint": "^2.9.4"
+    "jshint": "^2.9.4",
+    "os-tmpdir": "^1.0.2"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.6",
     "connect": "^3.0.2",
     "connect-livereload": "^0.5.4",
     "critical": "^0.7.0",

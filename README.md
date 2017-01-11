@@ -6,6 +6,12 @@ my attempt at running critical
 ## Publishing to gh-pages
 ![]http://www.hongkiat.com/blog/publishing-github-page/
 
+## Push to gh-pages branch
+
+```sh
+$ git subtree push --prefix dist origin gh-pages
+```
+
 *PageSpeed Insights results of before and after*
 
 Before:
