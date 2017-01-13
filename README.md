@@ -12,6 +12,22 @@ my attempt at running critical
 $ git subtree push --prefix dist origin gh-pages
 ```
 
+## Build task
+
+Run the below to serve from the dist/ folder
+
+```sh
+$ gulp serve:dist
+```
+
+Run the below to generate critical.html file into the dist/ folder
+
+```sh
+$ gulp critical
+```
+
+
+
 *PageSpeed Insights results of before and after*
 
 Before:

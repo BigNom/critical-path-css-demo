@@ -103,7 +103,7 @@ gulp.task('serve', ['connect'], function () {
     require('opn')('http://localhost:9000');
 });
 
-gulp.task('serve:dist', function () {
+gulp.task('serve:dist', ['build'], function () {
   browserSync.init({
     server: {
       baseDir: "./dist"
