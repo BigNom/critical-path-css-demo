@@ -6,6 +6,9 @@ my attempt at running critical
 ## Publishing to gh-pages
 ![]http://www.hongkiat.com/blog/publishing-github-page/
 
+## Gulp page speed module
+![]https://github.com/addyosmani/psi-gulp-sample
+
 ## Push to gh-pages branch
 
 ```sh

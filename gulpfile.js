@@ -5,6 +5,10 @@ var gulp = require('gulp');
 var critical = require('critical');
 
 var browserSync = require('browser-sync');
+var psi = require('psi');
+var site = 'https://bignom.github.io/critical-path-css-demo/critical.html';
+var key = '';
+
 
 const osTmpdir = require('os-tmpdir');
 
@@ -153,4 +157,28 @@ gulp.task('watch', ['connect', 'serve'], function () {
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
     gulp.watch('bower.json', ['wiredep']);
+});
+
+// pagespeed Insights
+
+// Run PageSpeed Insights
+gulp.task('mobile', function () {
+    return psi(site, {
+        // key: key
+        nokey: 'true',
+        strategy: 'mobile',
+    }).then(function (data) {
+        console.log('Speed score: ' + data.ruleGroups.SPEED.score);
+        console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
+    });
+});
+
+gulp.task('desktop', function () {
+    return psi(site, {
+        nokey: 'true',
+        // key: key,
+        strategy: 'desktop',
+    }).then(function (data) {
+        console.log('Speed score: ' + data.ruleGroups.SPEED.score);
+    });
 });
